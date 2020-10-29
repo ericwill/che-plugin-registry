@@ -7,17 +7,24 @@
 # SPDX-License-Identifier: EPL-2.0
 #
 
-name: PR Checks
+name: Sidecar PR check
+
 on:
-  pull_request:
-    branches: 
-      - master
+    pull_request:
+      paths:
+      - 'sidecars/**'
+
 jobs:
-  digest-validation:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v1
-    - name: Run script which checks container image digest
+    - name: Clone source code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Get changed files
+      id: getfile
       run: |
-        sudo pip install yq
-        /bin/bash .ci/digest-validation-pr.sh
+          echo $(git diff --name-only ${{ github.base_ref }})
+
