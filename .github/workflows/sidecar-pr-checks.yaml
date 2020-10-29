@@ -26,5 +26,9 @@ jobs:
     - name: Get changed files
       id: getfile
       run: |
+<<<<<<< HEAD:.github/workflows/sidecar-pr-checks.yaml
           echo $(git diff --name-only ${{ github.base_ref }})
+=======
+          echo $(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+>>>>>>> 3a91e79... Add demo GitHub PR check and some sample sidecars:.github/workflows/icons-extensions-pr-check.yaml
 
