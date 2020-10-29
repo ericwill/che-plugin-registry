@@ -29,6 +29,4 @@ RUN apt-get update && \
     apt-get purge -y --auto-remove gcc build-essential && \
     apt-get clean && apt-get -y autoremove && rm -rf /var/lib/apt/lists/*
 
-ADD etc/entrypoint.sh /entrypoint.sh
-ENTRYPOINT [ "/entrypoint.sh" ]
 CMD ${PLUGIN_REMOTE_ENDPOINT_EXECUTABLE}
