@@ -25,8 +25,4 @@ ENV JAVA_HOME /usr/lib/jvm/default-jvm/
 ADD etc/before-start.sh /before-start.sh
 
 WORKDIR /projects
-
-ADD etc/entrypoint.sh /entrypoint.sh
-
-ENTRYPOINT [ "/entrypoint.sh" ]
 CMD ${PLUGIN_REMOTE_ENDPOINT_EXECUTABLE}
