@@ -38,5 +38,5 @@ jobs:
 
     - name: Get list of changed sidecar files
       run: |
-        ./.ci/sidecar-build-pr-check.sh origin/${{ github.base_ref }} ${{ github.event.pull_request.head.sha }}
+        ./.ci/sidecar-build-pr-check.sh check origin/${{ github.base_ref }} ${{ github.event.pull_request.head.sha }}
 

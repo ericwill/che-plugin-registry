@@ -36,5 +36,5 @@ jobs:
 
     - name: Get list of changed sidecar files
       run: |
-        ./.ci/sidecar-build-pr-check.sh HEAD^1 HEAD
+        ./.ci/sidecar-build-pr-check.sh build HEAD^1 HEAD
 
