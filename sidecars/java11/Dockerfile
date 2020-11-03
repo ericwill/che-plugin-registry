@@ -24,5 +24,4 @@ RUN apk --no-cache add openjdk11 --repository=http://dl-cdn.alpinelinux.org/alpi
 ENV JAVA_HOME /usr/lib/jvm/default-jvm/
 ADD etc/before-start.sh /before-start.sh
 
-WORKDIR /projects
 CMD ${PLUGIN_REMOTE_ENDPOINT_EXECUTABLE}
